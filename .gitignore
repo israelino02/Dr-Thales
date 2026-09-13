@@ -1,0 +1,16 @@
+# macOS
+.DS_Store
+
+# imagens em resolução cheia — o site usa as versões otimizadas em public/assets/
+_originais/
+
+# capturas de tela de revisão
+capturas/
+
+# Python
+__pycache__/
+*.pyc
+
+# material interno da agência — não é o site, não sobe
+NOTAS-INTERNAS.md
+PRODUCT.md
