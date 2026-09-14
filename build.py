@@ -514,7 +514,7 @@ def consultorio(p):
       </div>
 
       <div style="margin-top: 2rem; background: var(--navy-800); padding: 1.5rem; border-radius: var(--r); border: 1px solid var(--navy-700);">
-        <h3 style="font-size: 1.15rem; color: #fff; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem;">{ic("check")} Horário de Funcionamento</h3>
+        <h3 style="font-size: 1.15rem; color: #fff; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem;">Horário de Funcionamento</h3>
         <ul style="list-style: none; padding: 0; margin: 0; color: var(--on-navy-muted); font-size: 1rem; line-height: 1.8;">
           <li style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--navy-700); padding-bottom: 0.5rem; margin-bottom: 0.5rem;"><span>Domingo</span> <span style="font-weight: 500;">Fechado</span></li>
           <li style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--navy-700); padding-bottom: 0.5rem; margin-bottom: 0.5rem;"><span>Segunda a Sexta</span> <span style="font-weight: 500; color: #fff;">08:00 - 20:00</span></li>
