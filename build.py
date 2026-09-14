@@ -4,7 +4,7 @@
 Gerador do site do Dr. Thales Pizziolo.
 
 Edite o conteúdo aqui e rode:   python3 build.py
-Saída em public/ — é essa pasta que sobe para o servidor.
+Saída em public/ - é essa pasta que sobe para o servidor.
 
 Cabeçalho, rodapé, barra fixa e ícones ficam num lugar só, para as quatro
 páginas nunca divergirem entre si.
@@ -21,7 +21,7 @@ GTM = "GTM-WDB6CZFL"
 
 def wa(texto):
     """Link de WhatsApp com mensagem pré-preenchida. A mensagem identifica a
-    origem para a secretária — é o rastreamento que sobrevive a bloqueador,
+    origem para a secretária - é o rastreamento que sobrevive a bloqueador,
     iOS e consentimento de cookie."""
     return "https://wa.me/%s?text=%s" % (WA, quote(texto, safe=""))
 
@@ -49,7 +49,7 @@ JOINTS = [
         "desc": "Ortopedista de ombro na Vila Mariana, São Paulo. Avaliação de bursite, tendinite, manguito rotador e instabilidade. Tratamento conservador avaliado primeiro. CRM-SP 213316 / RQE 125841.",
         "h1": "Bursite, tendinite ou dor no ombro?",
         "h1seo": "Ortopedista de ombro em Vila Mariana, São Paulo",
-        "lede": "O ombro é a articulação de maior amplitude do corpo — e por isso uma das que mais sofrem com esporte, sobrecarga e movimentos repetidos. A avaliação começa entendendo a origem da sua dor antes de qualquer decisão de tratamento.",
+        "lede": "O ombro é a articulação de maior amplitude do corpo - e por isso uma das que mais sofrem com esporte, sobrecarga e movimentos repetidos. A avaliação começa entendendo a origem da sua dor antes de qualquer decisão de tratamento.",
         "wa": "Olá! Vim pela página de ombro do site e gostaria de agendar uma avaliação.",
         "conds_h2": "O que é avaliado no ombro",
         "conds": [
@@ -75,7 +75,7 @@ JOINTS = [
         "desc": "Ortopedista de cotovelo na Vila Mariana, São Paulo. Avaliação de bursite, epicondilite, cotovelo de tenista e dor por sobrecarga. CRM-SP 213316 / RQE 125841.",
         "h1": "Bursite, epicondilite ou dor no cotovelo?",
         "h1seo": "Ortopedista de cotovelo em Vila Mariana, São Paulo",
-        "lede": "Dor no cotovelo costuma aparecer aos poucos — no treino, na raquete, no teclado — até atrapalhar gestos simples como segurar um copo. A avaliação identifica a origem da sobrecarga para tratar a causa, não só o sintoma.",
+        "lede": "Dor no cotovelo costuma aparecer aos poucos - no treino, na raquete, no teclado - até atrapalhar gestos simples como segurar um copo. A avaliação identifica a origem da sobrecarga para tratar a causa, não só o sintoma.",
         "wa": "Olá! Vim pela página de cotovelo do site e gostaria de agendar uma avaliação.",
         "conds_h2": "O que é avaliado no cotovelo",
         "conds": [
@@ -88,7 +88,7 @@ JOINTS = [
         ],
         "faq": [
             ("Cotovelo de tenista só acontece em quem joga tênis?", "Não. O nome vem do esporte, mas a epicondilite lateral aparece com frequência em quem faz movimentos repetidos de punho e antebraço, inclusive fora do esporte."),
-            ("Bursite no cotovelo precisa ser drenada?", "Nem sempre. A conduta depende da causa, do tamanho e de haver ou não sinais de infecção — o que só a avaliação define."),
+            ("Bursite no cotovelo precisa ser drenada?", "Nem sempre. A conduta depende da causa, do tamanho e de haver ou não sinais de infecção - o que só a avaliação define."),
             ("Epicondilite tem tratamento sem cirurgia?", "Na grande maioria dos casos o tratamento é conservador. A cirurgia fica reservada a situações específicas, após avaliação individual."),
             ("Preciso parar de treinar?", "Nem sempre. Muitas vezes é possível adaptar a carga e o gesto durante a recuperação, com orientação."),
             ("O atendimento é por convênio?", "O atendimento é particular, sem convênio, com emissão de nota fiscal para você solicitar reembolso ao seu plano de saúde."),
@@ -116,7 +116,7 @@ JOINTS = [
             ("Toda lesão de ligamento no joelho precisa de cirurgia?", "Não. A decisão considera o tipo de lesão, o grau, a estabilidade do joelho e a demanda esportiva de cada paciente."),
             ("Lesão de menisco sempre é cirúrgica?", "Não. Muitas lesões de menisco são tratadas de forma conservadora. A indicação depende do padrão da lesão e dos sintomas."),
             ("Posso continuar correndo com dor no joelho?", "Depende da causa. Em muitos casos é possível adaptar o volume e a intensidade durante a recuperação, com orientação."),
-            ("Quando a artroscopia de joelho é indicada?", "Quando há indicação adequada após avaliação. É uma técnica minimamente invasiva, mas continua sendo uma cirurgia — e só é considerada quando necessária."),
+            ("Quando a artroscopia de joelho é indicada?", "Quando há indicação adequada após avaliação. É uma técnica minimamente invasiva, mas continua sendo uma cirurgia - e só é considerada quando necessária."),
             ("O atendimento é por convênio?", "O atendimento é particular, sem convênio, com emissão de nota fiscal para você solicitar reembolso ao seu plano de saúde."),
         ],
     },
@@ -183,7 +183,7 @@ def head(p, title, desc, canon, og_img):
 <link rel="apple-touch-icon" href="{p}assets/logo-marca.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Spectral:ital,wght@1,400;1,500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Spectral:ital,wght@1,400;1,500;1,600&display=swap">
 <link rel="stylesheet" href="{p}assets/style.css">
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){{w[l]=w[l]||[];w[l].push({{'gtm.start':new Date().getTime(),event:'gtm.js'}});
@@ -200,7 +200,7 @@ def schema_physician():
 "description":"Ortopedista e traumatologista com atuação em trauma esportivo e artroscopia. Atendimento dedicado a ombro, cotovelo e joelho.",
 "url":"%s/","image":"%s/assets/hero.jpg","telephone":"+5511912141608","email":"thpizziolo@gmail.com",
 "isAcceptingNewPatients":true,
-"address":{"@type":"PostalAddress","streetAddress":"Rua Domingos de Morais, 2781, 14º andar, Edifício Artwork","addressLocality":"São Paulo","addressRegion":"SP","addressCountry":"BR"},
+"address":{"@type":"PostalAddress","streetAddress":"Rua Domingos de Morais, 2781, 12º andar, Edifício Artwork","addressLocality":"São Paulo","addressRegion":"SP","addressCountry":"BR"},
 "areaServed":{"@type":"City","name":"São Paulo"},
 "sameAs":["https://www.doctoralia.com.br/thales-pizziolo/ortopedista-traumatologista/sao-paulo","https://www.instagram.com/drthalespizziolo"]}
 </script>""" % (SITE, SITE)
@@ -239,7 +239,7 @@ def header(p, atual=None):
   <div class="wrap">
     <a class="brand" href="{home}">
       <img src="{p}assets/logo-marca.png" alt="" width="38" height="38">
-      <span class="visually-hidden">Dr. Thales Pizziolo — página inicial</span>
+      <span class="visually-hidden">Dr. Thales Pizziolo - página inicial</span>
       <span class="brand-text" aria-hidden="true"><b class="brand-name">Dr. Thales Pizziolo</b><span class="brand-sub">Ortopedista · CRM-SP 213316</span></span>
     </a>
     <nav class="nav" aria-label="Principal">
@@ -267,23 +267,23 @@ def trust():
 def stance():
     return """<section class="stance on-dark">
   <div class="wrap">
-    <figure style="margin:0">
-      <blockquote style="margin:0"><q>A melhor qualidade do cirurgião é saber <em>não</em> indicar uma cirurgia.</q></blockquote>
-      <figcaption>Dr. Thales Pizziolo · CRM-SP 213316 · RQE 125841</figcaption>
+    <figure style="margin:0; padding: 3rem 1rem;">
+      <blockquote style="margin:0; font-family: 'Spectral', serif; font-size: clamp(2rem, 4vw, 3rem); font-style: italic; line-height: 1.25; text-align: center; font-weight: 500; color: var(--orange);"><q>A melhor qualidade do cirurgião é saber <em style="font-weight: 600; color: #fff;">não</em> indicar uma cirurgia.</q></blockquote>
+      <figcaption style="text-align: center; margin-top: 1.5rem; font-size: 1rem; color: var(--on-navy-muted); letter-spacing: 0.05em;">Dr. Thales Pizziolo · CRM-SP 213316 · RQE 125841</figcaption>
     </figure>
   </div>
 </section>"""
 
 
 def treatments(titulo):
-    li = "\n".join('      <li><h3>%s</h3><p>%s</p></li>' % t for t in TRATAMENTOS)
+    li = "\n".join('      <li class="treat-card" style="background: var(--bone-100); padding: 2rem 1.5rem; border: 1px solid var(--bone-200); border-radius: var(--r); transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;"><h3 style="font-size: 1.2rem; margin-bottom: 0.8rem; color: var(--navy-800);">%s</h3><p style="color: var(--muted); font-size: 0.95rem; line-height: 1.6;">%s</p></li>' % t for t in TRATAMENTOS)
     return f"""<section id="tratamentos">
   <div class="wrap">
     <h2>{titulo}</h2>
-    <ul class="treat">
+    <ul class="treat" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; background: transparent; padding: 0; margin-top: 3rem;">
 {li}
     </ul>
-    <p class="note" style="color:var(--muted)">A indicação de qualquer tratamento depende de consulta médica e avaliação individual.</p>
+    <p class="note" style="color:var(--muted); text-align: center; margin-inline: auto;">A indicação de qualquer tratamento depende de consulta médica e avaliação individual.</p>
   </div>
 </section>"""
 
@@ -291,18 +291,18 @@ def treatments(titulo):
 def about(p, compacto=False):
     li = "\n".join('        <li><b>%s</b><span>%s</span></li>' % c for c in CREDS)
     extra = "" if compacto else """
-        <p style="margin-top:1.1rem;color:var(--muted)">Construo uma estratégia individualizada, priorizando tratamentos não cirúrgicos e minimamente invasivos quando indicados — sem perder de vista a atividade que faz parte da sua vida. Corredor de rua e praticante de musculação, conheço de perto o valor que o esporte tem na rotina de cada pessoa.</p>"""
+        <p style="margin-top:1.1rem;color:var(--text-dark);">Construo uma estratégia individualizada, priorizando tratamentos não cirúrgicos e minimamente invasivos quando indicados - sem perder de vista a atividade que faz parte da sua vida. Corredor de rua e praticante de musculação, conheço de perto o valor que o esporte tem na rotina de cada pessoa.</p>"""
     return f"""<section id="sobre" style="background:#fff">
   <div class="wrap split">
     <figure class="split-figure" style="margin:0">
       <img src="{p}assets/sobre.jpg" alt="Dr. Thales Pizziolo de jaleco branco" width="800" height="1000" loading="lazy">
     </figure>
     <div>
-      <h2>{"Quem vai avaliar você" if compacto else "Ortopedia para quem quer continuar em movimento"}</h2>
-      <div class="prose" style="margin-top:1.2rem">
-        <p class="lede">Sou médico ortopedista com atuação em trauma esportivo e artroscopia. Minha abordagem começa por um princípio simples: você precisa entender sua lesão e o motivo de cada etapa do tratamento.</p>{extra}
+      <h2 style="font-size: clamp(2rem, 3.5vw, 2.5rem); margin-bottom: 1.5rem; color: var(--navy-900);">{"Quem vai avaliar você" if compacto else "Ortopedia para quem quer continuar em movimento"}</h2>
+      <div class="prose" style="margin-top:1.2rem; font-size: 1.12rem; line-height: 1.65; color: var(--ink);">
+        <p class="lede" style="font-size: 1.25rem; font-weight: 500; color: var(--navy-800); border-left: 4px solid var(--orange); padding-left: 1.2rem;">Sou médico ortopedista com atuação em trauma esportivo e artroscopia. Minha abordagem começa por um princípio simples: você precisa entender sua lesão e o motivo de cada etapa do tratamento.</p>{extra}
       </div>
-      <ul class="creds">
+      <ul class="creds" style="margin-top: 2.5rem;">
 {li}
       </ul>
     </div>
@@ -367,7 +367,7 @@ def footer(p, wa_dock):
       </div>
     </div>
     <div class="foot-legal">
-      <p>Dr. Thales Pizziolo · CRM-SP 213316 · RQE 125841<br>Rua Domingos de Morais, 2781 — 14º andar · Vila Mariana · São Paulo/SP</p>
+      <p>Dr. Thales Pizziolo · CRM-SP 213316 · RQE 125841<br>R. Domingos de Morais, 2781 - 12 andar · Vila Mariana · São Paulo/SP</p>
       <p>As informações deste site têm caráter educativo e não substituem a consulta médica. O resultado de qualquer tratamento depende de avaliação individual.</p>
     </div>
   </div>
@@ -424,11 +424,11 @@ def page_home():
              ("Explicar", "Mostrar com clareza o diagnóstico e as possibilidades reais de tratamento."),
              ("Tratar", "Priorizar opções conservadoras e menos invasivas quando indicadas."),
              ("Retornar", "Planejar uma volta segura e progressiva à atividade física.")]
-    st = "\n".join('      <li class="step"><h3>%s</h3><p>%s</p></li>' % (t, d) for t, d in steps)
+    st = "\n".join('      <li class="step" style="background: var(--bone-100); padding: 2rem; border-radius: var(--r); box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); transition: transform 0.3s ease, box-shadow 0.3s ease;"><h3 style="font-size: 1.25rem; color: var(--navy-800); margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.5rem;"><span style="display: flex; align-items: center; justify-content: center; width: 32px; height: 32px; border-radius: 50%%; background: var(--orange); color: #fff; font-size: 1rem;">%d</span> %s</h3><p style="color: var(--muted); font-size: 1rem; line-height: 1.6;">%s</p></li>' % (i+1, t, d) for i, (t, d) in enumerate(steps))
 
     html = head(p,
         "Ortopedista de Ombro, Cotovelo e Joelho na Vila Mariana | Dr. Thales Pizziolo",
-        "Ortopedista especialista em ombro, cotovelo e joelho na Vila Mariana, São Paulo. Trauma esportivo e artroscopia. Tratamento conservador avaliado primeiro — cirurgia apenas quando há indicação. CRM-SP 213316 / RQE 125841.",
+        "Ortopedista especialista em ombro, cotovelo e joelho na Vila Mariana, São Paulo. Trauma esportivo e artroscopia. Tratamento conservador avaliado primeiro - cirurgia apenas quando há indicação. CRM-SP 213316 / RQE 125841.",
         SITE + "/", "hero.jpg")
     html += schema_physician() + "\n" + schema_faq(FAQ_HOME) + "\n"
     html += header(p)
@@ -440,7 +440,7 @@ def page_home():
         Dor no ombro, cotovelo ou joelho?
         <span class="seo">Ortopedista especialista em Vila Mariana, São Paulo</span>
       </h1>
-      <p class="lede rise rise-2">Atuação em trauma esportivo e artroscopia. A avaliação começa entendendo sua lesão — e o tratamento conservador é considerado antes de qualquer cirurgia.</p>
+      <p class="lede rise rise-2">Atuação em trauma esportivo e artroscopia. A avaliação começa entendendo sua lesão - e o tratamento conservador é considerado antes de qualquer cirurgia.</p>
       <div class="hero-actions rise rise-3">
         <a class="btn btn-1 btn-lg" href="{wa("Olá! Vim pelo site e gostaria de agendar uma consulta.")}">{ic("wa")}Agendar pelo WhatsApp</a>
         <a class="btn btn-2 btn-lg" href="#articulacoes">Ver áreas de atuação</a>
@@ -470,7 +470,7 @@ def page_home():
   <div class="wrap">
     <h2>Como funciona o atendimento</h2>
     <p class="lede" style="margin-top:1rem">O objetivo não é mandar você parar. Sempre que for clinicamente seguro, adaptamos sua atividade durante a recuperação.</p>
-    <ol class="steps">
+    <ol class="steps" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-top: 3rem; list-style: none; padding: 0;">
 {st}
     </ol>
   </div>
@@ -478,7 +478,7 @@ def page_home():
 
 {about(p)}
 
-{treatments("Do cuidado conservador à cirurgia — apenas quando necessária")}
+{treatments("Do cuidado conservador à cirurgia - apenas quando necessária")}
 
 {consultorio(p)}
 
@@ -491,30 +491,45 @@ def page_home():
 
 
 def consultorio(p):
-    maps = "https://www.google.com/maps/search/?api=1&query=" + quote("Rua Domingos de Morais 2781 Vila Mariana São Paulo")
+    maps_link = "https://www.google.com/maps/search/?api=1&query=" + quote("Rua Domingos de Morais 2781 Vila Mariana São Paulo")
+    maps_iframe = '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3656.368524317135!2d-46.63806452377519!3d-23.59114787878036!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5a2b0e77d949%3A0xc3c57053e144a2b9!2sR.%20Domingos%20de%20Morais%2C%202781%20-%20Vila%20Mariana%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2004035-001!5e0!3m2!1spt-BR!2sbr!4v1714152345678!5m2!1spt-BR!2sbr" width="100%" height="100%" style="border:0; border-radius: var(--r); min-height: 400px; flex-grow: 1;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Google Maps - Localização do Consultório"></iframe>'
     return f"""<section id="consultorio" class="on-dark">
   <div class="wrap split flip">
     <div>
       <h2>Vila Mariana, no coração de São Paulo</h2>
       <address class="addr">
-        <span class="street">Rua Domingos de Morais, 2781</span>
-        <span class="more">14º andar · Edifício Artwork<br>Vila Mariana · São Paulo/SP</span>
+        <span class="street">R. Domingos de Morais, 2781 - 12 andar</span>
+        <span class="more">Vila Mariana, São Paulo - SP, 04035-001</span>
       </address>
-      <div class="hero-actions" style="margin-top:1.8rem;margin-bottom:0">
-        <a class="btn btn-2" href="{maps}" target="_blank" rel="noopener">{ic("pin")}Como chegar</a>
+
+      <div style="margin-top: 1.8rem;">
+        <p style="margin-bottom: 0.6rem; display: flex; align-items: center; gap: 0.6rem; font-size: 1.05rem;">
+          <strong style="color: #fff;">WhatsApp:</strong> 
+          <a href="{wa('Olá! Gostaria de agendar uma consulta.')}" style="color: var(--orange); text-decoration: none; font-weight: 500;">(11) 91214-1608</a>
+        </p>
+        <p style="margin-bottom: 0.6rem; display: flex; align-items: center; gap: 0.6rem; font-size: 1.05rem;">
+          <strong style="color: #fff;">Instagram:</strong> 
+          <a href="https://www.instagram.com/drthalespizziolo/" target="_blank" rel="noopener" style="color: var(--orange); text-decoration: none; font-weight: 500;">@drthalespizziolo</a>
+        </p>
       </div>
-      <h3 class="hosp-title">Procedimentos cirúrgicos, conforme indicação e disponibilidade</h3>
-      <ul class="hosp">
-        <li>Hospital Vila Lobos</li>
-        <li>São Luiz Anália Franco</li>
-        <li>Hospital 9 de Julho</li>
-        <li>Blanc</li>
-        <li>São Camilo Ipiranga</li>
-      </ul>
-      <p class="note">Atendimento particular, sem convênio, com possibilidade de emissão de nota fiscal para solicitação de reembolso ao seu plano de saúde.</p>
+
+      <div style="margin-top: 2rem; background: var(--navy-800); padding: 1.5rem; border-radius: var(--r); border: 1px solid var(--navy-700);">
+        <h3 style="font-size: 1.15rem; color: #fff; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem;">{ic("check")} Horário de Funcionamento</h3>
+        <ul style="list-style: none; padding: 0; margin: 0; color: var(--on-navy-muted); font-size: 1rem; line-height: 1.8;">
+          <li style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--navy-700); padding-bottom: 0.5rem; margin-bottom: 0.5rem;"><span>Domingo</span> <span style="font-weight: 500;">Fechado</span></li>
+          <li style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--navy-700); padding-bottom: 0.5rem; margin-bottom: 0.5rem;"><span>Segunda a Sexta</span> <span style="font-weight: 500; color: #fff;">08:00 - 20:00</span></li>
+          <li style="display: flex; justify-content: space-between;"><span>Sábado</span> <span style="font-weight: 500; color: #fff;">09:00 - 12:00</span></li>
+        </ul>
+      </div>
+
+      <div class="hero-actions" style="margin-top:2rem;margin-bottom:0">
+        <a class="btn btn-2" href="{maps_link}" target="_blank" rel="noopener">{ic("pin")}Ver rota no Maps</a>
+      </div>
+      
+      <p class="note" style="margin-top: 2rem;">Atendimento particular, sem convênio, com possibilidade de emissão de nota fiscal para solicitação de reembolso ao seu plano de saúde.</p>
     </div>
-    <figure class="split-figure" style="margin:0">
-      <img src="{p}assets/consultorio.jpg" alt="Dr. Thales Pizziolo em seu consultório na Vila Mariana" width="800" height="1000" loading="lazy">
+    <figure class="split-figure" style="margin:0; display: flex; flex-direction: column; min-height: 500px;">
+      {maps_iframe}
     </figure>
   </div>
 </section>"""
@@ -522,17 +537,8 @@ def consultorio(p):
 
 def page_joint(j):
     p = "../"
-    outros = [o for o in JOINTS if o["slug"] != j["slug"]]
     conds = "\n".join(f"""      <li>{ic("check")}<div><strong>{n}</strong><em>{d}</em></div></li>""" for n, d in j["conds"])
     sinais = "\n".join(f"""        <li>{ic("check")}<div><strong>{s}</strong></div></li>""" for s in SINAIS)
-    outras = "\n".join(f"""      <a class="joint reveal" href="../{o['slug']}/">
-        <div class="joint-img"><img src="../assets/{o['img']}" alt="Ilustração anatômica da articulação do {o['nome'].lower()}" width="640" height="640" loading="lazy"></div>
-        <div class="joint-body">
-          <h3>{o['nome']}</h3>
-          <p>{o['resumo']}</p>
-          <span class="joint-go">Ver avaliação de {o['nome'].lower()}{ic("arrow")}</span>
-        </div>
-      </a>""" for o in outros)
 
     html = head(p, j["title"], j["desc"], "%s/%s/" % (SITE, j["slug"]), j["img"])
     html += schema_physician() + "\n" + schema_faq(j["faq"]) + "\n" + schema_breadcrumb(j["nome"], j["slug"]) + "\n"
@@ -561,7 +567,7 @@ def page_joint(j):
 <section id="condicoes">
   <div class="wrap">
     <h2>{j['conds_h2']}</h2>
-    <p class="lede" style="margin-top:1rem">A consulta serve para diferenciar condições que causam dores parecidas — e que pedem tratamentos diferentes.</p>
+    <p class="lede" style="margin-top:1rem">A consulta serve para diferenciar condições que causam dores parecidas - e que pedem tratamentos diferentes.</p>
     <ul class="conds">
 {conds}
     </ul>
@@ -588,22 +594,8 @@ def page_joint(j):
 
 {stance()}
 
-{treatments("Do cuidado conservador à cirurgia — apenas quando necessária")}
+{consultorio(p)}
 
-{about(p, compacto=True)}
-
-{faq(j['faq'], "Dúvidas frequentes sobre " + j['nome'].lower(), "Respostas iniciais. Cada caso só é definido de verdade na consulta.")}
-
-{closing("Vamos entender a dor no seu " + j['nome'].lower() + "?", "Agende uma avaliação na Vila Mariana e saiba quais são as possibilidades de tratamento para o seu caso.", j['wa'])}
-
-<section>
-  <div class="wrap">
-    <h2>Outras articulações</h2>
-    <div class="joints joints-2">
-{outras}
-    </div>
-  </div>
-</section>
 """
     html += footer(p, j["wa"])
     return html
