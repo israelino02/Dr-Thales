@@ -280,7 +280,7 @@ def treatments(titulo):
     return f"""<section id="tratamentos">
   <div class="wrap">
     <h2>{titulo}</h2>
-    <ul class="treat" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; background: transparent; padding: 0; margin-top: 3rem;">
+    <ul class="treat" style="gap: 1.5rem; background: transparent; padding: 0; margin-top: 3rem;">
 {li}
     </ul>
     <p class="note" style="color:var(--muted); text-align: center; margin-inline: auto;">A indicação de qualquer tratamento depende de consulta médica e avaliação individual.</p>
@@ -470,7 +470,7 @@ def page_home():
   <div class="wrap">
     <h2>Como funciona o atendimento</h2>
     <p class="lede" style="margin-top:1rem">O objetivo não é mandar você parar. Sempre que for clinicamente seguro, adaptamos sua atividade durante a recuperação.</p>
-    <ol class="steps" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-top: 3rem; list-style: none; padding: 0;">
+    <ol class="steps" style="gap: 1.5rem; margin-top: 3rem; list-style: none; padding: 0;">
 {st}
     </ol>
   </div>
