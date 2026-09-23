@@ -131,12 +131,12 @@ SINAIS = [
 ]
 
 TRATAMENTOS = [
-    ("Tratamento conservador", "Medicação, reabilitação e adaptação das atividades conforme cada diagnóstico."),
-    ("Infiltrações", "Procedimentos selecionados para condições específicas, sempre após avaliação individual."),
-    ("Procedimentos guiados", "Precisão com auxílio de imagem para intervenções minimamente invasivas."),
-    ("Artroscopia", "Técnica cirúrgica minimamente invasiva quando há indicação adequada."),
-    ("Cirurgia ortopédica", "Planejamento cuidadoso, alinhado ao diagnóstico e aos objetivos do paciente."),
-    ("Retorno ao esporte", "Estratégia progressiva considerando força, função, segurança e modalidade."),
+    ("Tratamento conservador", "Medicação, reabilitação e adaptação da rotina."),
+    ("Infiltrações", "Indicadas após avaliação individual."),
+    ("Procedimentos guiados", "Precisão com auxílio de imagem."),
+    ("Artroscopia", "Cirurgia minimamente invasiva, quando indicada."),
+    ("Cirurgia ortopédica", "Planejada conforme o seu caso."),
+    ("Retorno ao esporte", "Volta progressiva e segura."),
 ]
 
 CREDS = [
@@ -276,11 +276,11 @@ def stance():
 
 
 def treatments(titulo):
-    li = "\n".join('      <li class="treat-card" style="background: var(--bone-100); padding: 2rem 1.5rem; border: 1px solid var(--bone-200); border-radius: var(--r); transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;"><h3 style="font-size: 1.2rem; margin-bottom: 0.8rem; color: var(--navy-800);">%s</h3><p style="color: var(--muted); font-size: 0.95rem; line-height: 1.6;">%s</p></li>' % t for t in TRATAMENTOS)
+    li = "\n".join('      <li class="treat-card"><h3>%s</h3><p>%s</p><a class="treat-btn" href="%s">Saber mais<span class="treat-btn-ic">%s</span></a></li>' % (t, d, wa("Olá! Vim pelo site e gostaria de saber mais sobre: %s." % t), ic("arrow")) for t, d in TRATAMENTOS)
     return f"""<section id="tratamentos">
   <div class="wrap">
     <h2>{titulo}</h2>
-    <ul class="treat" style="gap: 1.5rem; background: transparent; padding: 0; margin-top: 3rem;">
+    <ul class="treat">
 {li}
     </ul>
     <p class="note" style="color:var(--muted); text-align: center; margin-inline: auto;">A indicação de qualquer tratamento depende de consulta médica e avaliação individual.</p>
