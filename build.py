@@ -131,12 +131,12 @@ SINAIS = [
 ]
 
 TRATAMENTOS = [
-    ("Tratamento conservador", "Medicação, reabilitação e adaptação da rotina."),
-    ("Infiltrações", "Indicadas após avaliação individual."),
-    ("Procedimentos guiados", "Precisão com auxílio de imagem."),
-    ("Artroscopia", "Cirurgia minimamente invasiva, quando indicada."),
-    ("Cirurgia ortopédica", "Planejada conforme o seu caso."),
-    ("Retorno ao esporte", "Volta progressiva e segura."),
+    ("Tratamento conservador", "Medicação e reabilitação."),
+    ("Infiltrações", "Após avaliação individual."),
+    ("Procedimentos guiados", "Precisão com imagem."),
+    ("Artroscopia", "Minimamente invasiva."),
+    ("Cirurgia ortopédica", "Planejada para o seu caso."),
+    ("Retorno ao esporte", "Volta segura e progressiva."),
 ]
 
 CREDS = [
@@ -416,7 +416,7 @@ def page_home():
         <div class="joint-body">
           <h3>{j['nome']}</h3>
           <p>{j['resumo']}</p>
-          <span class="joint-go">Ver avaliação de {j['nome'].lower()}{ic("arrow")}</span>
+          <span class="joint-go">Ver detalhes{ic("arrow")}</span>
         </div>
       </a>""" for j in JOINTS)
 
@@ -424,7 +424,7 @@ def page_home():
              ("Explicar", "Mostrar com clareza o diagnóstico e as possibilidades reais de tratamento."),
              ("Tratar", "Priorizar opções conservadoras e menos invasivas quando indicadas."),
              ("Retornar", "Planejar uma volta segura e progressiva à atividade física.")]
-    st = "\n".join('      <li class="step" style="background: var(--bone-100); padding: 2rem; border-radius: var(--r); box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); transition: transform 0.3s ease, box-shadow 0.3s ease;"><h3 style="font-size: 1.25rem; color: var(--navy-800); margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.5rem;"><span style="display: flex; align-items: center; justify-content: center; width: 32px; height: 32px; border-radius: 50%%; background: var(--orange); color: #fff; font-size: 1rem;">%d</span> %s</h3><p style="color: var(--muted); font-size: 1rem; line-height: 1.6;">%s</p></li>' % (i+1, t, d) for i, (t, d) in enumerate(steps))
+    st = "\n".join('      <li class="step"><h3><span class="step-n">%d</span>%s</h3><p>%s</p></li>' % (i+1, t, d) for i, (t, d) in enumerate(steps))
 
     html = head(p,
         "Ortopedista de Ombro, Cotovelo e Joelho na Vila Mariana | Dr. Thales Pizziolo",
@@ -470,7 +470,7 @@ def page_home():
   <div class="wrap">
     <h2>Como funciona o atendimento</h2>
     <p class="lede" style="margin-top:1rem">O objetivo não é mandar você parar. Sempre que for clinicamente seguro, adaptamos sua atividade durante a recuperação.</p>
-    <ol class="steps" style="gap: 1.5rem; margin-top: 3rem; list-style: none; padding: 0;">
+    <ol class="steps">
 {st}
     </ol>
   </div>
