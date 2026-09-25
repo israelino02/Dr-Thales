@@ -36,6 +36,9 @@ SPRITE = """<svg width="0" height="0" style="position:absolute" aria-hidden="tru
 </svg>"""
 
 
+WA_AGENDAR = "Olá! Vim pelo Google e gostaria de agendar uma consulta com o Dr. Thales."
+
+
 def ic(nome):
     return '<svg aria-hidden="true" focusable="false"><use href="#i-%s"/></svg>' % nome
 
@@ -50,7 +53,7 @@ JOINTS = [
         "h1": "Bursite, tendinite ou dor no ombro?",
         "h1seo": "Ortopedista de ombro em Vila Mariana, São Paulo",
         "lede": "O ombro é a articulação de maior amplitude do corpo - e por isso uma das que mais sofrem com esporte, sobrecarga e movimentos repetidos. A avaliação começa entendendo a origem da sua dor antes de qualquer decisão de tratamento.",
-        "wa": "Olá! Vim pela página de ombro do site e gostaria de agendar uma avaliação.",
+        "wa": "Olá! Vim pelo Google e gostaria de saber mais sobre o tratamento de ombro.",
         "conds_h2": "O que é avaliado no ombro",
         "conds": [
             ("Bursite no ombro", "Inflamação da bolsa que reduz o atrito entre tendão e osso. Dor ao elevar o braço é comum."),
@@ -76,7 +79,7 @@ JOINTS = [
         "h1": "Bursite, epicondilite ou dor no cotovelo?",
         "h1seo": "Ortopedista de cotovelo em Vila Mariana, São Paulo",
         "lede": "Dor no cotovelo costuma aparecer aos poucos - no treino, na raquete, no teclado - até atrapalhar gestos simples como segurar um copo. A avaliação identifica a origem da sobrecarga para tratar a causa, não só o sintoma.",
-        "wa": "Olá! Vim pela página de cotovelo do site e gostaria de agendar uma avaliação.",
+        "wa": "Olá! Vim pelo Google e gostaria de saber mais sobre o tratamento de cotovelo.",
         "conds_h2": "O que é avaliado no cotovelo",
         "conds": [
             ("Bursite do olécrano", "Inflamação da bolsa na ponta do cotovelo. Inchaço visível é o sinal mais comum."),
@@ -102,7 +105,7 @@ JOINTS = [
         "h1": "Tendinite, lesão ou dor no joelho?",
         "h1seo": "Ortopedista de joelho em Vila Mariana, São Paulo",
         "lede": "O joelho sustenta o corpo em cada passada, salto e mudança de direção. Por isso as lesões aparecem tanto em quem corre quanto em quem joga, treina ou simplesmente quer subir escada sem dor. A avaliação considera sua modalidade e seus objetivos.",
-        "wa": "Olá! Vim pela página de joelho do site e gostaria de agendar uma avaliação.",
+        "wa": "Olá! Vim pelo Google e gostaria de saber mais sobre o tratamento de joelho.",
         "conds_h2": "O que é avaliado no joelho",
         "conds": [
             ("Tendinite patelar", "Conhecida como joelho de saltador: dor abaixo da patela, comum em corrida e esportes de salto."),
@@ -249,7 +252,7 @@ def header(p, atual=None):
       <a href="{home}#sobre">Sobre</a>
       <a href="{home}#consultorio">Consultório</a>
     </nav>
-    <a class="btn btn-1 header-cta" href="{wa("Olá! Vim pelo site (topo) e gostaria de agendar uma consulta.")}">{ic("wa")}Agendar</a>
+    <a class="btn btn-1 header-cta" href="{wa(next((j["wa"] for j in JOINTS if j["slug"] == atual), WA_AGENDAR))}">{ic("wa")}Agendar</a>
   </div>
 </header>
 <main id="main">
@@ -276,7 +279,7 @@ def stance():
 
 
 def treatments(titulo):
-    li = "\n".join('      <li class="treat-card"><h3>%s</h3><p>%s</p><a class="treat-btn" href="%s">Saber mais<span class="treat-btn-ic">%s</span></a></li>' % (t, d, wa("Olá! Vim pelo site e gostaria de saber mais sobre: %s." % t), ic("arrow")) for t, d in TRATAMENTOS)
+    li = "\n".join('      <li class="treat-card"><h3>%s</h3><p>%s</p><a class="treat-btn" href="%s">Saber mais<span class="treat-btn-ic">%s</span></a></li>' % (t, d, wa("Olá! Vim pelo Google e gostaria de saber mais sobre %s." % t.lower()), ic("arrow")) for t, d in TRATAMENTOS)
     return f"""<section id="tratamentos">
   <div class="wrap">
     <h2>{titulo}</h2>
@@ -359,7 +362,7 @@ def footer(p, wa_dock):
       <div>
         <h4>Contato</h4>
         <ul>
-          <li><a href="{wa("Olá! Vim pelo site (rodapé) e gostaria de agendar.")}">WhatsApp (11) 91214-1608</a></li>
+          <li><a href="{wa(wa_dock)}">WhatsApp (11) 91214-1608</a></li>
           <li><a href="mailto:thpizziolo@gmail.com">thpizziolo@gmail.com</a></li>
           <li><a href="https://www.instagram.com/drthalespizziolo" target="_blank" rel="noopener">@drthalespizziolo</a></li>
           <li><a href="https://www.doctoralia.com.br/thales-pizziolo/ortopedista-traumatologista/sao-paulo" target="_blank" rel="noopener">Doctoralia</a></li>
@@ -442,7 +445,7 @@ def page_home():
       </h1>
       <p class="lede rise rise-2">Atuação em trauma esportivo e artroscopia. A avaliação começa entendendo sua lesão - e o tratamento conservador é considerado antes de qualquer cirurgia.</p>
       <div class="hero-actions rise rise-3">
-        <a class="btn btn-1 btn-lg" href="{wa("Olá! Vim pelo site e gostaria de agendar uma consulta.")}">{ic("wa")}Agendar pelo WhatsApp</a>
+        <a class="btn btn-1 btn-lg" href="{wa(WA_AGENDAR)}">{ic("wa")}Agendar pelo WhatsApp</a>
         <a class="btn btn-2 btn-lg" href="#articulacoes">Ver áreas de atuação</a>
       </div>
       <div class="rise rise-4">{trust()}</div>
@@ -484,13 +487,13 @@ def page_home():
 
 {faq(FAQ_HOME, "Informação clara também faz parte do tratamento", "A consulta é o momento de entender seu caso em profundidade. Aqui estão respostas iniciais para as dúvidas mais comuns.")}
 
-{closing("Entenda sua lesão. Trate com propósito.", "Agende uma avaliação e descubra as possibilidades de tratamento para o seu caso.", "Olá! Vim pelo site (final da página) e gostaria de agendar uma avaliação.")}
+{closing("Entenda sua lesão. Trate com propósito.", "Agende uma avaliação e descubra as possibilidades de tratamento para o seu caso.", WA_AGENDAR)}
 """
-    html += footer(p, "Olá! Vim pelo site (botão fixo) e gostaria de agendar.")
+    html += footer(p, WA_AGENDAR)
     return html
 
 
-def consultorio(p):
+def consultorio(p, msg=WA_AGENDAR):
     maps_link = "https://www.google.com/maps/search/?api=1&query=" + quote("Rua Domingos de Morais 2781 Vila Mariana São Paulo")
     maps_iframe = '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3656.368524317135!2d-46.63806452377519!3d-23.59114787878036!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5a2b0e77d949%3A0xc3c57053e144a2b9!2sR.%20Domingos%20de%20Morais%2C%202781%20-%20Vila%20Mariana%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2004035-001!5e0!3m2!1spt-BR!2sbr!4v1714152345678!5m2!1spt-BR!2sbr" width="100%" height="100%" style="border:0; border-radius: var(--r); min-height: 400px; flex-grow: 1;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Google Maps - Localização do Consultório"></iframe>'
     return f"""<section id="consultorio" class="on-dark">
@@ -505,7 +508,7 @@ def consultorio(p):
       <div style="margin-top: 1.8rem;">
         <p style="margin-bottom: 0.6rem; display: flex; align-items: center; gap: 0.6rem; font-size: 1.05rem;">
           <strong style="color: #fff;">WhatsApp:</strong> 
-          <a href="{wa('Olá! Gostaria de agendar uma consulta.')}" style="color: var(--orange); text-decoration: none; font-weight: 500;">(11) 91214-1608</a>
+          <a href="{wa(msg)}" style="color: var(--orange); text-decoration: none; font-weight: 500;">(11) 91214-1608</a>
         </p>
         <p style="margin-bottom: 0.6rem; display: flex; align-items: center; gap: 0.6rem; font-size: 1.05rem;">
           <strong style="color: #fff;">Instagram:</strong> 
@@ -594,7 +597,7 @@ def page_joint(j):
 
 {stance()}
 
-{consultorio(p)}
+{consultorio(p, j["wa"])}
 
 """
     html += footer(p, j["wa"])
