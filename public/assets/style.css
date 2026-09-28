@@ -290,6 +290,10 @@ a.trust-item:hover{color:#fff}
   .split,.split.flip{grid-template-columns:minmax(0,1fr);gap:2.2rem}
   .split-figure{max-width:390px}
   .split.flip .split-figure{order:-1}
+  /* Consultório: o mapa não pode aparecer antes do título "Vila Mariana...".
+     Reverte o order:-1 geral do .flip só aqui, senão o mapa fica órfão no
+     topo da seção e parece que sumiu. */
+  #consultorio .split-figure{order:0;max-width:none}
 }
 
 /* --- credenciais -------------------------------------------------------- */
