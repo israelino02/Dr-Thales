@@ -26,9 +26,6 @@ GTM = "GTM-WDB6CZFL"
 ATUALIZADO = "2026-10-14"          # sitemap e política de privacidade
 ATUALIZADO_EXTENSO = "14 de outubro de 2026"
 
-FONTS = ("https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700"
-         "&family=Spectral:ital,wght@1,500;1,600&display=swap")
-
 # tamanhos exibidos, para o navegador escolher entre os arquivos -480 e -800
 SIZES_HERO = "(max-width: 900px) calc(100vw - 2.5rem), 470px"
 SIZES_SPLIT = "(max-width: 880px) min(390px, calc(100vw - 2.5rem)), 460px"
@@ -253,10 +250,7 @@ def head(p, title, desc, canon, og_img, robots="index,follow,max-image-preview:l
 <link rel="icon" href="/favicon.ico" sizes="48x48">
 <link rel="icon" href="{p}assets/icon-192.png" type="image/png" sizes="192x192">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="style" href="{FONTS}" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="{FONTS}"></noscript>
+<link rel="preload" as="font" type="font/woff2" href="{p}assets/fonts/archivo-latin.woff2" crossorigin>
 <link rel="stylesheet" href="{p}assets/style.css?v={css_versao()}">
 <script>
 // Consentimento (Google Consent Mode v2), antes do GTM carregar.
@@ -364,7 +358,7 @@ def header(p, atual=None):
 def trust():
     return f"""<div class="trust">
         <a class="trust-item" href="https://www.google.com/search?q=Dr.+Thales+Pizziolo+ortopedista" target="_blank" rel="noopener">{ic("star")}<span><b>4,8</b> no Google · 12 avaliações</span></a>
-        <a class="trust-item" href="https://www.doctoralia.com.br/thales-pizziolo/ortopedista-traumatologista/sao-paulo" target="_blank" rel="noopener">{ic("star")}<span><b>5,0</b> no Doctoralia · 13 avaliações</span></a>
+        <a class="trust-item" href="https://www.doctoralia.com.br/thales-pizziolo/ortopedista-traumatologista/sao-paulo" target="_blank" rel="noopener">{ic("star")}<span><b>5,0</b> no Doctoralia · 14 avaliações</span></a>
         <span class="trust-cred">CRM-SP 213316 · RQE 125841</span>
       </div>"""
 
@@ -785,7 +779,7 @@ PRIVACIDADE = f"""
 <p><strong>Dados de navegação.</strong> Quando você visita o site, ferramentas do Google registram as páginas vistas, quanto tempo você ficou, de onde veio (por exemplo, uma busca ou um anúncio), o tipo de aparelho e navegador, a cidade aproximada e os cliques nos botões de WhatsApp. Usamos o Google Tag Manager, o Google Analytics 4 e a medição de conversões do Google Ads.</p>
 <p><strong>Microsoft Clarity, só se você aceitar.</strong> O Clarity registra cliques, rolagem e movimentos na página, em forma de mapas de calor e gravações da sessão. Textos digitados ficam mascarados. Ele só é carregado depois que você clica em “Aceitar” no aviso de cookies.</p>
 <p><strong>Contato pelo WhatsApp.</strong> Os botões de agendamento abrem o WhatsApp com uma mensagem já escrita, que indica de qual página você veio (por exemplo, “tratamento de joelho”). Nada é enviado se você não mandar a mensagem. Se mandar, o que você escrever é usado pelo consultório para responder e agendar a consulta, e também passa pelo WhatsApp, que segue a política de privacidade da Meta.</p>
-<p><strong>Conteúdo de terceiros.</strong> O mapa do consultório vem do Google Maps e as fontes de texto vêm do Google Fonts. Para carregar esse conteúdo, o Google recebe o endereço IP e dados técnicos do seu navegador. A hospedagem do site (Vercel) também registra o IP em seus registros de acesso.</p>
+<p><strong>Conteúdo de terceiros.</strong> O mapa do consultório vem do Google Maps. Para carregá-lo, o Google recebe o endereço IP e dados técnicos do seu navegador. As fontes de texto são do próprio site. A hospedagem do site (Vercel) também registra o IP em seus registros de acesso.</p>
 
 <h2>Para que usamos</h2>
 <ul>
@@ -818,7 +812,7 @@ PRIVACIDADE = f"""
 <p>Você pode mudar sua escolha quando quiser em <button type="button" class="link-btn" data-cookie-prefs>Preferências de cookies</button>, que também está no rodapé de todas as páginas. Ao recusar, os cookies de medição são apagados e o Google passa a receber apenas sinais sem identificador. Também é possível bloquear cookies nas configurações do navegador.</p>
 
 <h2>Com quem os dados são compartilhados</h2>
-<p>Com os fornecedores das ferramentas citadas: Google (Analytics, Ads, Tag Manager, Maps e Fonts), Microsoft (Clarity), Meta (WhatsApp) e Vercel (hospedagem). Esses serviços guardam dados em servidores fora do Brasil, com as garantias contratuais previstas no art. 33 da LGPD.</p>
+<p>Com os fornecedores das ferramentas citadas: Google (Analytics, Ads, Tag Manager e Maps), Microsoft (Clarity), Meta (WhatsApp) e Vercel (hospedagem). Esses serviços guardam dados em servidores fora do Brasil, com as garantias contratuais previstas no art. 33 da LGPD.</p>
 
 <h2>Por quanto tempo</h2>
 <ul>
