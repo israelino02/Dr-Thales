@@ -822,7 +822,7 @@ PRIVACIDADE = f"""
 
 <h2>Por quanto tempo</h2>
 <ul>
-  <li>Google Analytics: os relatórios detalhados ficam disponíveis por até 14 meses.</li>
+  <li>Google Analytics: dados de usuário (ligados a cookies) por 14 meses; dados detalhados de eventos por 2 meses. Os relatórios de totais, sem identificador, não expiram.</li>
   <li>Microsoft Clarity: gravações por até 30 dias e mapas de calor por até 13 meses.</li>
   <li>Conversas no WhatsApp: pelo tempo necessário ao atendimento. Os dados da consulta, quando ela acontece, seguem as regras do prontuário médico.</li>
 </ul>
