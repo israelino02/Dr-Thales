@@ -52,6 +52,14 @@ def foto(p, nome, alt, sizes, prioridade=False):
             'width="800" height="1200" %s>' % (p, nome, srcset, sizes, alt, carga))
 
 
+def ilustracao(p, nome, alt, sizes, prioridade=False):
+    srcset = ", ".join("%sassets/%s-%d.webp %dw" % (p, nome, w, w) for w in (320, 640))
+    # sem loading=lazy: são 3 arquivos de 6 a 33 KB, logo abaixo do topo
+    carga = 'fetchpriority="high"' if prioridade else 'decoding="async"'
+    return ('<img src="%sassets/%s-640.webp" srcset="%s" sizes="%s" alt="%s" '
+            'width="640" height="640" %s>' % (p, nome, srcset, sizes, alt, carga))
+
+
 # ---------------------------------------------------------------- ícones ----
 SPRITE = """<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
   <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2m0 1.67c4.55 0 8.24 3.7 8.24 8.24s-3.69 8.25-8.24 8.25c-1.5 0-2.96-.4-4.24-1.16l-.3-.18-3.12.82.83-3.04-.19-.32a8.19 8.19 0 0 1-1.25-4.37c0-4.54 3.7-8.24 8.27-8.24m-3.7 4.1c-.18 0-.46.07-.7.33-.25.25-.94.92-.94 2.23 0 1.32.96 2.59 1.09 2.77.14.18 1.87 2.98 4.6 4.06 2.27.9 2.73.72 3.22.67.5-.04 1.6-.65 1.82-1.29.23-.63.23-1.18.16-1.29-.07-.11-.25-.18-.53-.32-.27-.14-1.6-.79-1.85-.88-.25-.09-.43-.14-.61.14-.18.27-.7.89-.86 1.07-.16.18-.32.2-.59.07-.27-.14-1.17-.43-2.23-1.38-.82-.73-1.38-1.63-1.54-1.9-.16-.28-.02-.43.11-.57.12-.13.32-.34.48-.52.16-.18.21-.3.32-.48.11-.18.05-.34-.02-.48-.07-.14-.6-1.47-.83-2-.18-.43-.37-.44-.53-.45h-.36Z"/></symbol>
@@ -74,7 +82,7 @@ def ic(nome):
 # "Ortopedista de ombro" pode; "especialista em ombro" não.
 JOINTS = [
     {
-        "slug": "ombro", "nome": "Ombro", "og": "og-ombro.jpg",
+        "slug": "ombro", "nome": "Ombro", "img": "joint-shoulder", "og": "og-ombro.jpg",
         "resumo": "Bursite, tendinite, lesões do manguito rotador, luxações, instabilidade e traumas ligados ao esporte.",
         "title": "Tratamento de Bursite e Tendinite no Ombro na Vila Mariana | Dr. Thales Pizziolo",
         "desc": "Ortopedista de ombro na Vila Mariana, São Paulo. Avaliação de bursite, tendinite, manguito rotador e instabilidade. Tratamento conservador avaliado primeiro. CRM-SP 213316 / RQE 125841.",
@@ -113,7 +121,7 @@ JOINTS = [
         ],
     },
     {
-        "slug": "cotovelo", "nome": "Cotovelo", "og": "og-cotovelo.jpg",
+        "slug": "cotovelo", "nome": "Cotovelo", "img": "joint-elbow", "og": "og-cotovelo.jpg",
         "resumo": "Bursite, epicondilite, cotovelo de tenista, dores por sobrecarga e lesões que limitam a função.",
         "title": "Tratamento de Bursite e Epicondilite no Cotovelo na Vila Mariana | Dr. Thales Pizziolo",
         "desc": "Ortopedista de cotovelo na Vila Mariana, São Paulo. Avaliação de bursite, epicondilite, cotovelo de tenista e dor por sobrecarga. CRM-SP 213316 / RQE 125841.",
@@ -152,7 +160,7 @@ JOINTS = [
         ],
     },
     {
-        "slug": "joelho", "nome": "Joelho", "og": "og-joelho.jpg",
+        "slug": "joelho", "nome": "Joelho", "img": "joint-knee", "og": "og-joelho.jpg",
         "resumo": "Tendinite patelar, bursite, lesões ligamentares e de menisco, desgaste articular e lesões esportivas.",
         "title": "Tratamento de Tendinite e Dor no Joelho na Vila Mariana | Dr. Thales Pizziolo",
         "desc": "Ortopedista de joelho na Vila Mariana, São Paulo. Avaliação de tendinite patelar, bursite, lesões ligamentares e de menisco. Tratamento conservador avaliado primeiro. CRM-SP 213316 / RQE 125841.",
@@ -560,6 +568,7 @@ def footer(p, wa_dock):
 def page_home():
     p = ""
     cards = "\n".join(f"""      <a class="joint reveal" href="{j['slug']}/">
+        <div class="joint-img">{ilustracao(p, j['img'], "Ilustração anatômica da articulação do " + j['nome'].lower(), "(max-width: 820px) 50vw, 380px")}</div>
         <div class="joint-body">
           <h3>{j['nome']}</h3>
           <p>{j['resumo']}</p>
@@ -708,8 +717,8 @@ def page_joint(j):
       </div>
       <div class="rise rise-4">{trust()}</div>
     </div>
-    <figure class="hero-figure rise rise-2" style="margin:0">
-      {foto(p, "consultorio", "Dr. Thales Pizziolo em consultório", SIZES_HERO, prioridade=True)}
+    <figure class="hero-figure hero-figure-joint rise rise-2" style="margin:0">
+      {ilustracao(p, j['img'], "Ilustração anatômica da articulação do " + j['nome'].lower(), "(max-width: 900px) 260px, 470px", prioridade=True)}
     </figure>
   </div>
 </section>

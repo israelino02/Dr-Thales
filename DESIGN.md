@@ -49,9 +49,11 @@ Medida de corpo 65–75ch. Tracking de display em -0,025em, nunca abaixo de -0,0
 
 ## Composição
 
-Hero dividido com foto real do médico. As três articulações são painéis navy
-com o nome em tamanho grande e filete laranja no topo, sem ícone nem
-ilustração. Nas páginas de articulação, o hero usa a foto do consultório.
+Hero dividido com foto real do médico. As três articulações são painéis
+conduzidos pela ilustração anatômica: 3 colunas no desktop; no celular e no
+tablet, 2 colunas lado a lado (ombro e cotovelo) e o joelho ocupando a largura
+toda embaixo, com a imagem à esquerda. As páginas de articulação abrem com a
+ilustração da própria articulação.
 
 Fotos sempre em WebP com `srcset` (480 e 800 px), geradas por
 `gerar_imagens.py`.

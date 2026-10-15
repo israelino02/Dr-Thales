@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 Gera as imagens otimizadas do site a partir das fotos em public/assets/*.jpg
-e do logo em _originais/.
+e das ilustrações e do logo em _originais/.
 
 Rode só quando trocar uma foto ou o logo:   python3 gerar_imagens.py
 Requer Pillow com suporte a WebP (pip install pillow). O build.py continua
@@ -22,7 +22,9 @@ ASSETS = os.path.join(ROOT, "public", "assets")
 PUBLIC = os.path.join(ROOT, "public")
 ORIG = os.path.join(ROOT, "_originais")
 
-FOTOS = ["hero", "sobre", "retrato-casual", "consultorio"]
+FOTOS = ["hero", "sobre", "retrato-casual"]
+ILUSTRACOES = ["joint-shoulder", "joint-elbow", "joint-knee"]   # fonte: _originais/<nome>.png
+LARGURAS_ILUSTRACAO = [320, 640]
 LARGURAS = [480, 800]
 
 NAVY_900 = (11, 24, 38)
@@ -50,6 +52,15 @@ def fotos():
             h = round(im.height * w / im.width)
             out = os.path.join(ASSETS, "%s-%d.webp" % (nome, w))
             im.resize((w, h), Image.LANCZOS).save(out, "WEBP", quality=82, method=6)
+            print("  %s (%d KB)" % (os.path.relpath(out, ROOT), os.path.getsize(out) // 1024))
+
+
+def ilustracoes():
+    for nome in ILUSTRACOES:
+        im = Image.open(os.path.join(ORIG, nome + ".png")).convert("RGB")
+        for w in LARGURAS_ILUSTRACAO:
+            out = os.path.join(ASSETS, "%s-%d.webp" % (nome, w))
+            im.resize((w, w), Image.LANCZOS).save(out, "WEBP", quality=80, method=6)
             print("  %s (%d KB)" % (os.path.relpath(out, ROOT), os.path.getsize(out) // 1024))
 
 
@@ -108,5 +119,6 @@ def og():
 
 if __name__ == "__main__":
     fotos()
+    ilustracoes()
     icones()
     og()
