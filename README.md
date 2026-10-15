@@ -21,7 +21,7 @@ CRM-SP 213316 · RQE 125841
 
 ```
 public/          o site publicado — HTML estático, sem build
-  assets/        imagens otimizadas e style.css
+  assets/        imagens WebP, fontes woff2 (assets/fonts) e style.css
 build.py         gera as páginas, sitemap, robots, llms.txt e 404
 gerar_imagens.py gera WebP, ícones e imagens de compartilhamento (Pillow)
 DESIGN.md        paleta, tipografia e regras de contraste
