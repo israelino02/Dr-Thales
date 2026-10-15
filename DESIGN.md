@@ -2,9 +2,10 @@
 
 ## Origem da identidade
 
-A identidade parte dos ativos da marca: o logo (navy profundo + monograma
-laranja) e as três ilustrações 3D das articulações. Paleta e tom foram derivados
-diretamente deles.
+A identidade parte do logo (navy profundo + monograma laranja). A paleta foi
+amostrada dele e das três ilustrações 3D das articulações que o site usava até
+outubro de 2026. As ilustrações saíram do site (anatomia imprecisa, cara de
+imagem gerada); a paleta ficou.
 
 ## Cor
 
@@ -48,9 +49,12 @@ Medida de corpo 65–75ch. Tracking de display em -0,025em, nunca abaixo de -0,0
 
 ## Composição
 
-Hero dividido, e as três articulações como **painéis conduzidos pela ilustração
-real** — não cartões de ícone + título + texto. As ilustrações 3D são o ativo
-visual mais forte que ele tem e viram a porta de entrada para cada página.
+Hero dividido com foto real do médico. As três articulações são painéis navy
+com o nome em tamanho grande e filete laranja no topo, sem ícone nem
+ilustração. Nas páginas de articulação, o hero usa a foto do consultório.
+
+Fotos sempre em WebP com `srcset` (480 e 800 px), geradas por
+`gerar_imagens.py`.
 
 A frase de posicionamento ganha uma seção navy inteira, em serifa grande — é a
 ideia central da abordagem dele e merece o maior destaque tipográfico da página.
